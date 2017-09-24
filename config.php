@@ -3,6 +3,8 @@
 define("DB_HOST", 'localhost');
 define("DB_USER", 'root');
 
+define("CONTROLADORES", 'modulos/controllers/');
+define("MODELOS", 'modulos/models/');
 
 
 define("NAME_APP", 'proyect_name');

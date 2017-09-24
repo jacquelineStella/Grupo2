@@ -9,6 +9,7 @@ abstract class DBAbstracModel {
 	protected $query;
 	protected $rows = array();
 	private $conn;
+	public $msj = 'realizado'; // V2 Atributo para que se pueda comunicar con otros objetos
 
 	// Metodos abstactos para el ABM que seran heredados por las clases hijas
 	abstract protected function get();
@@ -27,11 +28,19 @@ abstract class DBAbstracModel {
 		$this->conn->close();
 	}
 
+	// 
+
+
 	// Ejecuta consulta del tipo INSERT, UPDATE, DELETE
-	protected function consulta_simple() {
-		$this->abrir_conexion();
-		$this->conn->query($this->query);
-		$this->cerrar_conexion();
+	protected function consulta_simple() { // V2 agrego validacion que solo ejecute si vien por $_POST
+		if($_POST) {
+			$this->abrir_conexion();
+			$this->conn->query($this->query);
+			$this->cerrar_conexion();
+		}else {
+			$this->msj = 'Metodo no permitido';
+		}
+
 	}
 
 	// Ejecuta consulta del tipo SELECT, los retorna en un array
