@@ -84,7 +84,7 @@ class Usuario extends DBAbstracModel {
 	}
 
 	function __destruct() {
-		unset($this);
+		// unset($this);
 	}
 
 
