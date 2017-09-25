@@ -141,7 +141,7 @@ class UsuariosController {
 				'email' => 'emanuel@mail.com'
 			)
 		);
-
+	
 	echo json_encode($datos);  // Codifica los datos en JSON
 
 	}

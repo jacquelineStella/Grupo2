@@ -32,15 +32,15 @@ function obtener_uri() {
 	$parametro = (isset($url[2]) && $url[2] != null) ? $url[2] : null; // Corregir para que reciba mas de un parametro ejemplo para1/para2/para3
 	// podria ser generando un array con los parametros
 	if (isset($url[2]) && $url[2] != null) {
-		echo "parametros Existe el parametros<br/>";
+		//echo "parametros Existe el parametros<br/>";
 		$parametro2 = array_slice($url, 2);
-		print_r($parametro2);
-		echo "<br/>";
+		//print_r($parametro2);
+		//echo "<br/>";
 	}else {
 
 		$parametro2 = null;
-		echo "No Existe el parametros<br/>";
-		print_r($parametro2);
+		//echo "No Existe el parametros<br/>";
+		//print_r($parametro2);
 	}
 
 
