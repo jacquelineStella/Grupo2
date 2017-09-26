@@ -1,0 +1,98 @@
+<manifest alg="2" build="2017.1.0.379" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="petfriend.com" resolutions="1x" timestamp="1506439160344">
+  <folder name="css">
+    <file name="site_global.css" crc="444006867"/>
+    <file name="publicar---mascotas.css" crc="4235411311" ref="publicar---mascotas"/>
+    <file name="bienvenidos.css" crc="36145976" ref="bienvenidos"/>
+    <file name="categorias---buscar.css" crc="283928746" ref="categorias---buscar"/>
+    <file name="buscar-mascotas.css" crc="466593816" ref="buscar-mascotas"/>
+    <file name="mapa.css" crc="4185475547" ref="mapa"/>
+    <file name="registro.css" crc="4054505507" ref="registro"/>
+    <file name="categorias---publicar.css" crc="4082352992" ref="categorias---publicar"/>
+    <file name="index.css" crc="4271315888" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="museutils.js" crc="17924269" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="whatinput.js" crc="86476730" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="museconfig.js" crc="278381782" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="jquery.watch.js" crc="4240030481" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="webpro.js" crc="416662029" ref="index:registro:publicar---mascotas"/>
+    <file name="form_check.php" crc="4110044762" ref="index"/>
+    <file name="form_throttle.php" crc="22190333" ref="index"/>
+    <file name="form_process.php" crc="257545537" ref="index"/>
+    <file name="form-u111.php" crc="3920008405" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="3854337258" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="require.js" crc="3861931657" ref="index:registro:bienvenidos:mapa:categorias---buscar:categorias---publicar:publicar---mascotas:buscar-mascotas"/>
+    <file name="form-u328.php" crc="269327742" ref="registro"/>
+    <file name="form-u654.php" crc="242761564" ref="publicar---mascotas"/>
+  </folder>
+  <folder name="images">
+    <file name="principal.jpg" crc="3785224195" ref="index:bienvenidos">
+      <caption webpage="index" alt=""/>
+      <caption webpage="bienvenidos" alt=""/>
+    </file>
+    <file name="facebook-icon-preview-1-400x400.png" crc="433340484" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="google-logo.png" crc="109438656" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="perfil usuario.png" crc="4180021471" ref="registro">
+      <caption webpage="registro" alt=""/>
+    </file>
+    <file name="u441-4.png" crc="4134040818" ref="bienvenidos"/>
+    <file name="huella3-u444.png" crc="355437389" ref="bienvenidos"/>
+    <file name="huella3-u447.png" crc="143426147" ref="bienvenidos"/>
+    <file name="preguntas.png" crc="4015432227" ref="bienvenidos:mapa">
+      <caption webpage="bienvenidos" alt=""/>
+      <caption webpage="mapa" alt=""/>
+    </file>
+    <file name="mapacomercialrivas.png" crc="3980645354" ref="bienvenidos:mapa">
+      <caption webpage="bienvenidos" alt=""/>
+      <caption webpage="mapa" alt=""/>
+    </file>
+    <file name="mascotas mapa.png" crc="3766532415" ref="mapa">
+      <caption webpage="mapa" alt=""/>
+    </file>
+    <file name="mascotas2.jpg" crc="524527735" ref="categorias---buscar:categorias---publicar">
+      <caption webpage="categorias---buscar" alt=""/>
+      <caption webpage="categorias---publicar" alt=""/>
+    </file>
+    <file name="u561-4.png" crc="4002062898" ref="categorias---buscar"/>
+    <file name="huella3-u563.png" crc="143426147" ref="categorias---buscar"/>
+    <file name="huella3-u562.png" crc="355437389" ref="categorias---buscar"/>
+    <file name="u605-4.png" crc="4002062898" ref="categorias---publicar"/>
+    <file name="huella3-u607.png" crc="143426147" ref="categorias---publicar"/>
+    <file name="huella3-u606.png" crc="355437389" ref="categorias---publicar"/>
+    <file name="mascotas.png" crc="4158431388" ref="publicar---mascotas:buscar-mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+    <file name="u638-4.png" crc="2596540" ref="publicar---mascotas"/>
+    <file name="radiobuttonunchecked.png" crc="3976871150" ref="publicar---mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+    <file name="radiobuttonuncheckedrollover.png" crc="4276313674" ref="publicar---mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+    <file name="radiobuttonuncheckedmousedown.png" crc="54863585" ref="publicar---mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+    <file name="radiobuttonchecked.png" crc="4193302265" ref="publicar---mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+    <file name="radiobuttoncheckedrollover.png" crc="88928956" ref="publicar---mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+    <file name="radiobuttoncheckedmousedown.png" crc="4280357799" ref="publicar---mascotas">
+      <caption webpage="publicar---mascotas" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="4292934498" seo="true" mt="1506439082480" redirect="true"/>
+  <file name="registro.html" crc="4183312264" seo="true" mt="1506439082528" redirect="true"/>
+  <file name="bienvenidos.html" crc="75443409" seo="true" mt="1506439082613" redirect="true"/>
+  <file name="mapa.html" crc="3924074499" seo="true" mt="1506439082565" redirect="true"/>
+  <file name="categorias---buscar.html" crc="4260911258" seo="true" mt="1506439082653" redirect="true"/>
+  <file name="categorias---publicar.html" crc="4256077444" seo="true" mt="1506439142008" redirect="true"/>
+  <file name="publicar---mascotas.html" crc="469047073" seo="true" mt="1506437969014" redirect="true"/>
+  <file name="buscar-mascotas.html" crc="315559016" seo="true" mt="1506438897964" redirect="true"/>
+</manifest>
