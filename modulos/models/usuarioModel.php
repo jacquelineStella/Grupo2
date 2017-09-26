@@ -49,10 +49,13 @@ class Usuario extends DBAbstracModel {
 				foreach ($datos_usuario as $campo => $valor) {
 					$$campo = $valor;
 				}
+				echo "<br> nombre: " . $nombre . "| apellido: " . $apellido . "| email: " . $email .
+						"| telefono: " . $telefono . "| clave: " . $clave . "<br>";
 				$this->query = "
-					INSERT INTO 	usuario(nombre, apellido, email, telefono, clave)
-					VALUES 			('$nombre', '$apellido' '$email', '$telefono', '$clave')
+					INSERT INTO 	usuario (id_usuario, nombre, apellido, email, telefono, clave)
+					VALUES 			('null','$nombre', '$apellido', '$email', '$telefono', '$clave')
 				";
+				
 				$this->consulta_simple();
 				$this->msj = 'Usuario agregado';
 			} else{
@@ -60,6 +63,7 @@ class Usuario extends DBAbstracModel {
 			}
 		}
 	}
+
 
 	public function edit($datos_usuario=array()) {
 		foreach ($datos_usuario as $campo => $valor) {

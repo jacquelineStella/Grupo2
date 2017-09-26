@@ -31,6 +31,34 @@ class UsuariosController {
 
 	}
 
+	public function registro($datos='') {
+		if (isset($datos) && is_array($datos)) {
+			if (count($datos) > 4) {  // Evalua que tenga todos los campos
+				
+				// Instancia al modelo
+				$usuario = new Usuario();
+				// Modifica las propiedades
+				$array = array('nombre' => $datos[0], 
+								'apellido' => $datos[1],
+								'email' => $datos[2],
+								'telefono' => $datos[3],
+								'clave' => $datos[4] 
+								);
+				//print_r($array);
+				$usuario->set($array);
+				echo $usuario->msj;
+					/*public $nombre;
+					public $apellido;
+					public $email;
+					public $telefono;
+					private $clave;
+					*/
+				// Retorna el estado
+			}
+
+		}
+	}
+
 
 	public function save($parametros='') {
 		// Valida los parametros --> DESARROLLAR HELPER:
