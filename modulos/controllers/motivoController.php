@@ -1,5 +1,4 @@
 <?php
-//requiere_once(MODELOS . 'motivoModelo.php');
 //requiere_once(VISTAS . 'motivoView.php');
 require_once(MODELOS . 'motivoModel.php');
 
@@ -19,7 +18,8 @@ class MotivoController {
 
 		if(isset($dato[0])) {
 			$array = array('descripcion' => $dato[0]);
-			print_r($array);
+			$motivo = new Motivo();
+			$motivo->set($array);
 		}
 	}
 

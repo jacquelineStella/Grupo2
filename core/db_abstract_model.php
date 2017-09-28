@@ -32,14 +32,12 @@ abstract class DBAbstracModel {
 
 
 	// Ejecuta consulta del tipo INSERT, UPDATE, DELETE
-	protected function consulta_simple() { // V2 agrego validacion que solo ejecute si vien por $_POST
-		if($_POST) {
+	protected function consulta_simple() {
 			$this->abrir_conexion();
 			$this->conn->query($this->query);
 			$this->cerrar_conexion();
-		}else {
-			$this->msj = 'Metodo no permitido';
-		}
+			$this->msj = 'ejecucion exitosa';
+		
 
 	}
 
