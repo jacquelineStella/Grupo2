@@ -1,7 +1,7 @@
 function listar() {
 
     $.ajax({
-        url: 'http://localhost/grupo2/mascotas/listar/adopcion/',
+        url: 'http://sucursal24.com/emanuel/mascotas/listar/adopcion',
         type: 'POST',
         dataType: 'JSON',
         success: function (datos) {
