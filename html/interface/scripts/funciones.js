@@ -1,3 +1,8 @@
+// Variables Globales
+var url_webservice = "";
+
+
+// funciones
 function listar() {
 
     $.ajax({
@@ -16,6 +21,27 @@ function listar() {
             else{
                 console.log("No hay mascotas.");
             }
+        }
+    });
+}
+
+/* INICIO DE SESION
+   ----------------
+    1- Envia al webservice los datos de usuario y contraseña y recibe un objeto con el estado
+    2- Si son validos:
+
+*/
+
+function login() {
+
+    // $("#datos-usuario").html("nuevo");
+    $.ajax({
+        url: url_webservice + /usuario/,
+        type: 'POST',
+        dataType: 'JSON',
+        success: function (datos) {
+            console.log(datos);
+
         }
     });
 }
