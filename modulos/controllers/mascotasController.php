@@ -1,8 +1,11 @@
 <?php
-
+// Permite la conexion desde cualquier origen
+header("Access-Control-Allow-Origin: *");
+// Permite la ejecucion de los metodos
+header("Access-Control-Allow-Methods: GET, POST");  
 //requiere_once(MODELOS . 'mascotasModelo.php');
 //requiere_once(VISTAS . 'mascotasView.php');
-//require_once(MODELOS . 'mascotasModel.php');
+require_once(MODELOS . 'mascotaModel.php');
 
 class MascotasController {
 
@@ -25,6 +28,34 @@ class MascotasController {
 	}
 
 
+	public function publicar($datos=array()) {
+
+		// formato {foto, color, edad, especie, raza}
+		if (isset($datos) && is_array($datos)) {
+			if (count($datos) > 4) {  // Evalua que tenga todos los campos
+				
+				// Instancia al modelo
+				$mascota = new Mascota();
+				// Modifica las propiedades
+				$array = array('foto' => $datos[0], 
+								'color' => $datos[1],
+								'edad' => $datos[2],
+								'especie' => $datos[3],
+								'raza' => $datos[4] 
+								);
+				
+				$mascota->set($array);
+			// Retorna el estado
+				echo json_encode($mascota);
+			}
+
+		} else {
+			echo json_encode(array());
+		}
+
+		
+	}
+
 
 	private function adopcion() {
 		// 1.Instancia al modelo
@@ -45,7 +76,11 @@ class MascotasController {
 	}
 
 	private function perdidos() {
-		echo "Funcion Perdidos";
+		// 1.Instancia al modelo
+
+		// 2.Recibe la query
+
+		// 3.Retorna el JSON
 	}
 	
 

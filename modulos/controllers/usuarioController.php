@@ -1,4 +1,8 @@
 <?php
+	// Permite la conexion desde cualquier origen
+	header("Access-Control-Allow-Origin: *");
+	// Permite la ejecucion de los metodos
+	header("Access-Control-Allow-Methods: GET, POST");  
 /* Funciones principales:
 	* Instancia al modelo
 	* Modificar sus propiedades, si es necesario
@@ -57,18 +61,12 @@ class UsuarioController {
 								'telefono' => $datos[3],
 								'clave' => $datos[4] 
 								);
-				//print_r($array);
 				$usuario->set($array);
-				echo $usuario->msj;
-					/*public $nombre;
-					public $apellido;
-					public $email;
-					public $telefono;
-					private $clave;
-					*/
-				// Retorna el estado
+				echo json_encode($usuario);
 			}
 
+		} else {
+			echo json_encode(array());
 		}
 	}
 
