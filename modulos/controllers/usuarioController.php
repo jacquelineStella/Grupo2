@@ -19,17 +19,30 @@
 //requiere_once('usuarioView.php');
 require_once(MODELOS . 'usuarioModel.php');
 
-class UsuariosController {
-	
+class UsuarioController {
 
-	public function __construct($metodo='', $parametro='') {  // $argumentos deberia ser una array con todos los paramentros
+	// array = ('nombre' => '', email' => 'usuario@mail.com', 'clave' = 'hash md5')
+	public function iniciar($datos='') {
+		
+		$array = $this->formatear_array($datos);  // sino esta completo, retorna una array con '-'
+			
 
+		$usuario = new Usuario();
+		$usuario->get($array['email']);
+		if ($usuario->msj = "Existe" && $usuario->clave == $array['clave']) {
+			// Retornar una clave que sera almacenada en el cliente
+			// clave hash de email + 
+			//Logueo correcto";
+			//echo $usuario->email;
+			echo json_encode($usuario);
+		} else {
 
-
-		// $this->usuario = new Usuario();
-		// call_user_func_array($metodo, $parametro);
+			echo json_encode(array());
+		}
+		
 
 	}
+
 
 	public function registro($datos='') {
 		if (isset($datos) && is_array($datos)) {
@@ -65,7 +78,7 @@ class UsuariosController {
 		//									Valida los datos, formatea y devuelve un msj si son invalidos
 		$campos = (isset($parametros) && $parametros != '') ? $parametros : '';
 		echo "-------<br/>";
-		$this->formater_array($campos);
+		$this->formatear_array($campos);
 		// formateo del array: $campos= array('nombre' => 'pepito',
 		//										'apellido' => 'pepe',
 		//										'email' => 'pepito@pepelandia.com',
@@ -83,16 +96,26 @@ class UsuariosController {
 		// retorna el estado msj
 		//echo $persona->msj;
 	}
+		// formateo del array: $campos= array('nombre' => 'pepito',
+		//										'apellido' => 'pepe',
+		//										'email' => 'pepito@pepelandia.com',
+		//										'telefono' => '1122334455'
+		//										'clave' => '12jkajdajhuhdauishdahsduasuui1'
+		
 
-
-	private function formater_array( $array) {
-		if(is_array($array)) {
+	public function formatear_array($array='') {
+		if(is_array($array) && count($array) > 4) {
+			$campos = array('nombre', 'apellido', 'email', 'telefono', 'clave');
+			$array_formateado = array();
+			foreach ($campos as $key => $value) {
+				$array_formateado[$value] = $array[$key];
+			}
 			
+		}else {  // Si no tiene todos los campos
 			
-			print_r($array);
-		}else {
-			echo "no es array";
+			$array_formateado = array('nombre'=> '-', 'apellido' => '-', 'email' => '-', 'telefono' => '-', 'clave' => '-');
 		}
+		return $array_formateado;
 	}
 
 	// Proteger los metodos a privados!!!
@@ -116,30 +139,10 @@ class UsuariosController {
 
 	}
 
-	public function ingresar($parametros='') { // Recibe un array con los los parametros indefinidos
 
-		// Seccion de validacion Parametros --> HACER un HELPER
-		$datos = $parametros;
-
-		//print_r($datos);
-		echo 'parametros recibidos: <br/>';
-		echo $datos[0] . "<br/>";
-		
-		
-		echo "Insertando";
-	}
-
-	private function validad_datos($datos) {
-		if ($datos != null) {
-			$datos = 1;
-		} else {
-			$datos = "email/";
-		}
-	
-	}
 
 	// METODO DE PRUEBA
-	public function mostrar2($parame="nao@mail.com") {
+	public function mostrar2($parame) {
 		$usuario = new Usuario();
 		$usuario->get($parame);
 		echo json_encode($usuario); // No seria recomendable enviar todo el objeto, o ocultar datos (verificar con private)

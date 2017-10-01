@@ -8,7 +8,7 @@ class Usuario extends DBAbstracModel {
 	public $apellido;
 	public $email;
 	public $telefono;
-	private $clave;
+	public $clave;
 	
 	// protected $permiso;  // verificar si deberia ser privada o protegiada...
 	// Por el momento no se tendra en cuenta otros roles
@@ -35,9 +35,9 @@ class Usuario extends DBAbstracModel {
 			foreach ($this->rows[0] as $propiedad => $valor) {
 				$this->$propiedad = $valor;
 			}
-			$this->msj = 'Usuario encontrado';
+			$this->msj = 'Existe';
 		} else {
-			$this->msj = 'Usuario no encontrado';
+			$this->msj = 'No existe';
 		}
 
 	}

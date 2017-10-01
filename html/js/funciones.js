@@ -3,6 +3,13 @@ var url_webservice = "http://localhost/grupo2/Grupo2";
 var recurso = "/usuarios/mostrar2"
 
 
+// Se ejecuta solo si carga el documento
+$(document).ready(function(){
+    console.log("ejecuta");
+});
+
+
+
 // Definicion del Objeto usuario
 function Usuario() {
     this.id = localStorage.getItem("Id");
