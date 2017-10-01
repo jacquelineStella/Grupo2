@@ -1,6 +1,6 @@
 // Variables Globales
-var url_webservice = "http://www.sucursal24.com/emanuel/"; 
-//var url_webservice = "http://localhost/grupo2/Grupo2/";
+// var url_webservice = "http://www.sucursal24.com/emanuel/"; 
+var url_webservice = "http://localhost/grupo2/Grupo2/";
 var recurso = "/usuario/";
 
 
@@ -21,6 +21,9 @@ $(document).ready(function(){
                     url: url_webservice + recurso + "-/-/" + usuario[0] + "/-/" + usuario[1],
                     type: 'POST',
                     dataType: 'JSON',
+                    beforeSend: function(){
+                $(".fa").css('display','inline');
+                     } 
                     success: function (datos) {
                         console.log(datos);
                         if(datos.msj == true){  // Si el login correcto
@@ -31,6 +34,8 @@ $(document).ready(function(){
                         }else {
                             $("#resultado").html("Datos invalidos");
                         }
+                        .always(function(){
+                            $('.fa').hide();
                     }
                 });
 
