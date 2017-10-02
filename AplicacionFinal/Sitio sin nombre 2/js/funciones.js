@@ -22,9 +22,7 @@ $(document).ready(function(){
                     url: url_webservice + recurso + "-/-/" + usuario[0] + "/-/" + usuario[1],
                     type: 'POST',
                     dataType: 'JSON',
-                    beforeSend: function(){
-                $(".fa").css('display','inline');
-                     } 
+                   
                     success: function (datos) {
                         console.log(datos);
                         if(datos.msj == true){  // Si el login correcto
@@ -35,8 +33,7 @@ $(document).ready(function(){
                         }else {
                             $("#resultado").html("Datos invalidos");
                         }
-                        .always(function(){
-                            $('.fa').hide();
+                        
                     }
                 });
 
@@ -86,23 +83,50 @@ $(document).ready(function(){
 
     function validar_datos() {
         // captura los datos de los inputs y validar los datos
-        
-        var email = $("input_email").val();
-        var pass = $("input_password").val();
-        if (email=="") {
-            alert("campo obligatorio")
-        }else if(email.indexOf('@', 0) == -1 || email.indexOf('.', 0) == -1) {
-            alert('El correo electrónico introducido no es correcto.');
-            return false;
+        var validacion=true;
+        var email= document.getElementById("email").value;
+        var textoEmail = document.getElementById("emailLabel");
+        var pass= document.getElementById("contraseña").value;
+        var textoContraseña = document.getElementById("contraseñaLabel");
+        var expEmail= /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
+        var contraseña=/^[A-Z]{1}[a-z0-9]{19}$/;
+      
+        if((expEmail.test(email.value) == 0) || (email.value.length = 0)){
+        textoEmail.innerHTML="*Debe completar un email valido";
+        InsertarClaseError("emailLabel");
+        validacion=false;
+        }else{
+        EliminarClaseError("emailLabel");
+        textoEmail.innerHTML="";
+        }
+    
+        if (pass.value == ""){
+        textoContraseña.innerHTML="*Debe completar la contraseña";
+        InsertarClaseError("contraseñaLabel");
+        validacion=false;
+        }else if((contraseña.test(pass.value) == 0) || (pass.value.length = 0)){
+        textoContraseña.innerHTML="*La contraseña debe tener la primer letra en mayuscula";
+        InsertarClaseError("contraseñaLabel");
+        validacion=false;
+        }else{
+        EliminarClaseError("contraseñaLabel");
+        textoContraseña.innerHTML="";
+        }      
+            
+
+        //Si la validacion esta bien,validacion envia formulario
+        //
+        if (validacion==true){  
+            // Crear una array con los datos formato: ['email', 'password']
+
+            var datos = new Array(email, pass);
+
+            // Retorna el array
+            return datos;                 
+            
         }
 
-
-        // Crear una array con los datos formato: ['email', 'password']
-        var datos = new Array(email, pass);
-
-
-        // Retorna el array
-        return datos;
+      
     }
 
 
@@ -122,6 +146,27 @@ $(document).ready(function(){
         // Retorna el array
         return datos;
     }
+
+
+
+
+//clases para usar en la validacion
+function InsertarClaseError(id){
+    var elemento = document.getElementById(id);
+
+    if(!elemento.classList.contains("error")){
+        elemento.classList.add("error");
+    }
+}
+
+function EliminarClaseError(id){
+    var elemento = document.getElementById(id);
+
+    if(elemento.classList.contains("error")){
+        elemento.classList.remove("error");
+    }
+}
+
 
 });
 
