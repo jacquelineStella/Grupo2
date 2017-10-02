@@ -15,7 +15,7 @@ class Usuario extends DBAbstracModel {
 
 	// constructor de la clase, indica a la base dentro del servidor que accedemos
 	function __construct() {
-		$this->db_name = 'thepetfriends';
+		$this->db_name = 'nueva_thepetfriends_v2';
 	}
 	
 
