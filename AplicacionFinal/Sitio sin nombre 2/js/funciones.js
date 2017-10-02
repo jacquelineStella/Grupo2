@@ -1,6 +1,6 @@
 // Variables Globales
-// var url_webservice = "http://www.sucursal24.com/emanuel/"; 
-var url_webservice = "http://localhost/Grupo2/AplicacionFinal/Sitio sin nombre";
+var url_webservice = "http://www.sucursal24.com/emanuel/"; 
+// var url_webservice = "http://localhost/Grupo2/AplicacionFinal/Sitio sin nombre";
 var recurso = "/usuario/";
 var expNombre=/^[a-zA-Z\s]*$/
 
