@@ -29,7 +29,7 @@ $(document).ready(function(){
                         if(datos.msj == true){  // Si el login correcto
                             $("#resultado").html("Usuario: " + datos.nombre);
                             // Abre la pagina principal
-                            window.location.replace("principal.html");
+                            window.location.replace("bienvenidos.html");
 
                         }else {
                             $("#resultado").html("Datos invalidos");
