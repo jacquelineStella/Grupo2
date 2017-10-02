@@ -10,12 +10,13 @@
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/funciones.js"></script>
-    <script type="text/javascript" src="./js/menu.js"></script>
+  
 
 
 	<title></title>
 
 </head>
+
 <body>
 	<div class="contenido">
 		<img src="./imagenes/menu.png" width="50" height="50" class="menu-bar">
@@ -23,6 +24,26 @@
 
 <div class="page-header text-center">
 	<h1>Pet Friends</h1>
+</div>
+<div id="ModalEnvioPassword" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Envio de password</h4>
+      </div>
+      <div class="modal-body">
+        <p>Se te enviara a tu correo electronica tu password</p>
+        <label>Correo electronico</label>
+			<input type="text" id="email_envio" class="form-control"  placeholder="Correo electrónico">
+		<p id="estado_enviado"><p>
+      </div>
+      <div class="modal-footer">
+        <button  id="btn_enviar_mail" type="button" class="btn btn-default" data-dismiss="modal">Enviar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -53,8 +74,9 @@
 
 <nav class="text-center">
 	<a class="btn btn-large btn-info" href="registro.html">Registrarme</a><br/>
+	<a href="#" data-toggle="modal" data-target="#ModalEnvioPassword">Olvide contraseña</a>
 
-	<a href="#">Olvide contraseña</a>
+	<!-- <a href="recuperar.html">Olvide contraseña</a> -->
 	
 </nav>
 </body>
