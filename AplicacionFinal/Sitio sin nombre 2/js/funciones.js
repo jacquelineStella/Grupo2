@@ -2,6 +2,7 @@
 // var url_webservice = "http://www.sucursal24.com/emanuel/"; 
 var url_webservice = "http://localhost/Grupo2/AplicacionFinal/Sitio sin nombre";
 var recurso = "/usuario/";
+var expNombre=/^[a-zA-Z\s]*$/
 
 
 
@@ -84,33 +85,37 @@ $(document).ready(function(){
     function validar_datos() {
         // captura los datos de los inputs y validar los datos
         var validacion=true;
-        var email= document.getElementById("email").value;
+        var email= document.getElementById("email");
         var textoEmail = document.getElementById("emailLabel");
-        var pass= document.getElementById("contraseña").value;
+        var pass= document.getElementById("contraseña");
         var textoContraseña = document.getElementById("contraseñaLabel");
         var expEmail= /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
-        var contraseña=/^[A-Z]{1}[a-z0-9]{19}$/;
-      
-        if((expEmail.test(email.value) == 0) || (email.value.length = 0)){
-        textoEmail.innerHTML="*Debe completar un email valido";
-        InsertarClaseError("emailLabel");
-        validacion=false;
+        var contraseña=/^[A-Z].*/;
+        
+        if (email.value=="") {
+            textoEmail.innerHTML="*Debe completar un email";
+            InsertarClaseError("emailLabel");
+         validacion=false;
+        }else if((expEmail.test(email.value) == 0) || (email.value.length = 0)){
+            textoEmail.innerHTML="*Debe completar un email valido";
+            InsertarClaseError("emailLabel");
+            validacion=false;
         }else{
-        EliminarClaseError("emailLabel");
-        textoEmail.innerHTML="";
+            EliminarClaseError("emailLabel");
+            textoEmail.innerHTML="";
         }
     
         if (pass.value == ""){
-        textoContraseña.innerHTML="*Debe completar la contraseña";
-        InsertarClaseError("contraseñaLabel");
-        validacion=false;
+            textoContraseña.innerHTML="*Debe completar la contraseña";
+            InsertarClaseError("contraseñaLabel");
+            validacion=false;
         }else if((contraseña.test(pass.value) == 0) || (pass.value.length = 0)){
-        textoContraseña.innerHTML="*La contraseña debe tener la primer letra en mayuscula";
-        InsertarClaseError("contraseñaLabel");
-        validacion=false;
+            textoContraseña.innerHTML="*La contraseña debe tener la primer letra en mayuscula";
+            InsertarClaseError("contraseñaLabel");
+            validacion=false;
         }else{
-        EliminarClaseError("contraseñaLabel");
-        textoContraseña.innerHTML="";
+            EliminarClaseError("contraseñaLabel");
+            textoContraseña.innerHTML="";
         }      
             
 
@@ -118,12 +123,15 @@ $(document).ready(function(){
         //
         if (validacion==true){  
             // Crear una array con los datos formato: ['email', 'password']
-
-            var datos = new Array(email, pass);
+            var mail= email.value;
+            var con= pass.value;
+            var datos = new Array(mail, con);
 
             // Retorna el array
             return datos;                 
             
+        }else{
+            return Array();
         }
 
       
