@@ -1,0 +1,1 @@
+Todo lo que sea de la aplicacion, tiene que ir si o si aca, ya que es la unica carpeta que se compila.
