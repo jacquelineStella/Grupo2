@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/registrar.js"></script>
+	<title>Cliente</title>
+
+</head>
+<body>
+<!-- nav -->
+	<nav>
+		<div class="nav-wrapper teal">
+	    	<a href="index.html" class="brand-logo"> <-Pet friends</a>
+
+		</div>
+ 	</nav>
+
+
+	<div class="container">
+
+		<div class="row">
+			<div class=" col s12 offset-m2 m8 center">
+			
+	            <div class="input-field">
+	                <input id="email_registro" type="email" class="validate">
+	                <label>Correo electronico</label>
+	            </div>
+	            <div class="input-field">
+	                <input id="password-1_registro" type="password" class="validate">
+	                <label>Contraseña</label>
+	            </div>
+	            <div class="input-field">
+	                <input id="password-2_registro" type="password" class="validate">
+	                <label>Repetir Contraseña</label>
+	            </div>
+
+				
+				<div class="section">
+					<a class="waves-effect light-blue btn" onclick="enviar()">Crear cuenta</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<script type="text/javascript">
+
+
+		function enviar() {
+			window.location.replace("principal.html");
+		}
+
+
+	</script>
+
+
+</body>
+</html>

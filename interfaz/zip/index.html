@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Cliente</title>
+	<script type="text/javascript">
+		$(document).ready(function(){
+      
+       		$('.carousel.carousel-slider').carousel({fullWidth: true},setTimeout(autoplay, 4500));
+       		function autoplay() {
+    				$('.carousel').carousel('next');
+    					setTimeout(autoplay, 4500);
+     			}
+    	});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2 class="header center teal-text">Portal de mascotas</h2>
+		</div>
+		<div class="row">
+			 <div class="carousel carousel-slider " data-indicators="true">
+			    <a class="carousel-item" href="#one!"><img src="images/principal.jpg"></a>
+			    <a class="carousel-item" href="#two!"><img src="images/mascotas.png"></a>
+			  </div>
+		</div>
+
+		<div class="row center">
+			<h5 class="center">Iniciar sesion</h5>
+             <div class="input-field col s12 m11">
+                <input id="email" type="text" class="validate">
+                <label>Correo electronico</label>
+             </div>
+             <div class="input-field col s12 m11">
+                <input id="password" type="text" class="validate">
+                <label>Contraseña</label>
+             </div>
+
+			<a class="waves-effect waves-light btn" href="principal.html" onclick="enviar();" >Iniciar</a>
+			<div class="section">
+				<a class="waves-effect">¿Olvidastes contraseña?</a>
+			</div>
+
+			<div class="section">
+				<a class="waves-effect  light-blue btn" onclick="registrar()">Registrarse</a>
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript">
+		function registrar() {
+			window.location.replace("registrar.html");
+		}
+
+
+	</script>
+
+
+</body>
+</html>
