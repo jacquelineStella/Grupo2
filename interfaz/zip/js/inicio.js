@@ -54,7 +54,7 @@ $(document).ready(function(){
         var password = $("#password").val();        
         var text1 = document.getElementById("text1");
         var text2 = document.getElementById("text2");        
-        var expMail= /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
+        var expMail=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/ ;
         var exp= /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,})$/;
 
         if (email==""){
