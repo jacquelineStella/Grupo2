@@ -40,7 +40,7 @@ $(document).ready(function(){
                 });
 
         } else { // Si es vacio, notifica que ingresa datos validos
-            alert("Datos invalidos");
+            
         }
         
 
