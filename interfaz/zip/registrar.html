@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/error.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
@@ -14,7 +15,7 @@
 <!-- nav -->
 	<nav>
 		<div class="nav-wrapper teal">
-	    	<a href="index.html" class="brand-logo"> <-Pet friends</a>
+	    	<a href="index.html" class="brand-logo"> <a>Pet friends</a>
 
 		</div>
  	</nav>
@@ -24,23 +25,31 @@
 
 		<div class="row">
 			<div class=" col s12 offset-m2 m8 center">
-			
+
+				
 	            <div class="input-field">
-	                <input id="email_registro" type="email" class="validate">
+	                <input id="email_registro" type="email" class="validate">	                
 	                <label>Correo electronico</label>
+
 	            </div>
+	            <br>
+	                <label id= "text1"></label>
 	            <div class="input-field">
-	                <input id="password-1_registro" type="password" class="validate">
+	                <input id="password-1_registro" type="password" class="validate"><br>
+	                
 	                <label>Contraseña</label>
 	            </div>
+	            <label id= "text2"></label>
 	            <div class="input-field">
 	                <input id="password-2_registro" type="password" class="validate">
+	               
 	                <label>Repetir Contraseña</label>
 	            </div>
+	             <label id= "text3"></label>
 
 				
 				<div class="section">
-					<a class="waves-effect light-blue btn" onclick="enviar()">Crear cuenta</a>
+					<a class="waves-effect light-blue btn" id="enviar" ">Crear cuenta</a>
 				</div>
 			</div>
 
