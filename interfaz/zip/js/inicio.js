@@ -84,6 +84,7 @@ $(document).ready(function(){
             EliminarClaseError("text2");
             text2.innerHTML="";
         }
+         window.location.replace("principal.html");
 
 
 
