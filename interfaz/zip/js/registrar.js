@@ -1,7 +1,7 @@
 // Variables Globales
-// var url_webservice = "http://www.sucursal24.com/emanuel/"; 
+var url_webservice = "http://www.sucursal24.com/emanuel/api"; 
 
-var url_webservice = "http://localhost/web_service_basico";
+//var url_webservice = "http://localhost/web_service_basico";
 var recurso = "/cuenta/registrar";
 
 
@@ -18,22 +18,23 @@ $(document).ready(function(){
     */
     $("#enviar").click(function(){
         var usuario = validar_datos_registro();
-        var recurso = "usuario/registro/"
+        var recurso = "/cuenta/registrar/"
 
         if (usuario.length > 0) { // No es vacio
             $.ajax({  // campos: {'nombre', 'apellido', 'email', 'telefono', 'password'}
-                url: url_webservice + recurso + usuario[0] + "/" + usuario[1] + "/" + usuario[2] + "/" +  usuario[3] + "/" +  usuario[4],
+                url: url_webservice + recurso,
                 type: 'POST',
-                dataType: 'JSON',
+                data: 'usuario='+usuario[0]+'&password='+usuario[1],
                 success: function (datos) {
                     console.log(datos);
+                    window.location.replace("index.html");
                     if(datos.msj == true){  // Si se guardo correctamente
                         console.log("El registro fue exitoso");
                         window.location.replace("index.html");
 
                     }else {
-                        console.log("El email ya existe");
-                        alert("El email ya existe");
+                        //console.log("El email ya existe");
+                        //alert("El email ya existe");
                         }
                     }
                 });

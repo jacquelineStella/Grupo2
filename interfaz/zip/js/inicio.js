@@ -1,7 +1,7 @@
 // Variables Globales
-// var url_webservice = "http://www.sucursal24.com/emanuel/"; 
+var url_webservice = "http://www.sucursal24.com/emanuel/api"; 
 
-var url_webservice = "http://localhost/web_service_basico";
+//var url_webservice = "http://localhost/web_service_basico";
 var recurso = "/cuenta/registrar";
 
 
@@ -18,13 +18,14 @@ $(document).ready(function(){
     */
     $("#iniciar").click(function(){
         var usuario = validar_datos_inicio();
-        var recurso = "usuario/registro/"
+        //var recurso = "/usuario/registro/"
+        var recurso = "/cuenta/inicio";
 
         if (usuario.length > 0) { // No es vacio
-            $.ajax({  // campos: {'nombre', 'apellido', 'email', 'telefono', 'password'}
-                url: url_webservice + recurso + usuario[0] + "/" + usuario[1] + "/" + usuario[2] + "/" +  usuario[3] + "/" +  usuario[4],
+            $.ajax({  // campos: {'nombre', 'apellido', 'email', 'telefono', 'password'} 
+                url: url_webservice + recurso,
                 type: 'POST',
-                dataType: 'JSON',
+                data: 'usuario='+usuario[0]+'&password='+usuario[1],
                 success: function (datos) {
                     console.log(datos);
                     if(datos.msj == true){  // Si se guardo correctamente
