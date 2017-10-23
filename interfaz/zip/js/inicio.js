@@ -16,8 +16,8 @@ $(document).ready(function(){
         3. Envia los datos
         4. Confirma registro al usario
     */
-    $("#enviar").click(function(){
-        var usuario = validar_datos_registro();
+    $("#iniciar").click(function(){
+        var usuario = validar_datos_inicio();
         var recurso = "usuario/registro/"
 
         if (usuario.length > 0) { // No es vacio
@@ -29,7 +29,7 @@ $(document).ready(function(){
                     console.log(datos);
                     if(datos.msj == true){  // Si se guardo correctamente
                         console.log("El registro fue exitoso");
-                        window.location.replace("index.html");
+                        window.location.replace("principal.html");
 
                     }else {
                         console.log("El email ya existe");
@@ -46,15 +46,13 @@ $(document).ready(function(){
     });
 
 
-    function validar_datos_registro() {
+    function validar_datos_inicio() {
         // captura los datos de los inputs y validar los datos
        
-        var email = $("#email_registro").val();
-        var password = $("#password-1_registro").val();
-        var password2 = $("#password-2_registro").val();
+        var email = $("#email").val();
+        var password = $("#password").val();        
         var text1 = document.getElementById("text1");
-        var text2 = document.getElementById("text2");
-        var text3 = document.getElementById("text3");
+        var text2 = document.getElementById("text2");        
         var expMail= /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
         var exp= /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,})$/;
 
@@ -85,24 +83,6 @@ $(document).ready(function(){
             EliminarClaseError("text2");
             text2.innerHTML="";
         }
-
-        if (password2==""){
-            text3.innerHTML="*Debe repetir la contraseña";
-            InsertarClaseError("text3");
-            return false;
-
-        }else if(password != password2){
-            text3.innerHTML="*Los contraseñas no coinciden ";
-            InsertarClaseError("text3");
-            return false;
-        }else{
-            EliminarClaseError("text3");
-            text3.innerHTML="";
-        }
-
-        
-
-
 
 
 

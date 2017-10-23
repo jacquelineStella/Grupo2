@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/error.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/inicio.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Cliente</title>
@@ -37,12 +39,14 @@
                 <input id="email" type="text" class="validate">
                 <label>Correo electronico</label>
              </div>
+             <br><label id="text1"></label>
              <div class="input-field col s12 m11">
-                <input id="password" type="text" class="validate">
+                <input id="password" type="password" class="validate">
                 <label>Contraseña</label>
              </div>
+             <br><label id="text2"></label><br><br>
 
-			<a class="waves-effect waves-light btn" href="principal.html" onclick="enviar();" >Iniciar</a>
+			<a class="waves-effect waves-light btn"  id="iniciar">Iniciar</a>
 			<div class="section">
 				<a class="waves-effect">¿Olvidastes contraseña?</a>
 			</div>
