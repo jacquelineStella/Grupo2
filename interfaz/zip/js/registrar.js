@@ -30,12 +30,15 @@ $(document).ready(function(){
                     // window.location.replace("index.html");
                     if(datos.success == true){  // Si se guardo correctamente
                         console.log("El registro fue exitoso");
+                        materialize.toast("El registro fue exitoso", 4000);
                         window.location.replace("index.html");
-                        alert("El email se registro");
+                        
 
                     }else {
+                        var email = $("#email_registro").val();                        
                         console.log("El email ya existe");
-                        alert("El email ya existe");
+                        materialize.toast(datos.message, 4000);
+                        
                         }
                     }
                 });

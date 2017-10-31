@@ -2,7 +2,7 @@
 var url_webservice = "http://www.sucursal24.com/emanuel/api"; 
 
 //var url_webservice = "http://localhost/web_service_basico";
-var recurso = "/cuenta/registrar";
+var recurso = "/cuenta/iniciar";
 
 
 
@@ -19,30 +19,29 @@ $(document).ready(function(){
     $("#iniciar").click(function(){
         var usuario = validar_datos_inicio();
         //var recurso = "/usuario/registro/"
-        var recurso = "/cuenta/inicio";
+        var recurso = "/cuenta/iniciar/";
 
         if (usuario.length > 0) { // No es vacio
             $.ajax({  // campos: {'nombre', 'apellido', 'email', 'telefono', 'password'} 
                 url: url_webservice + recurso,
                 type: 'POST',
                 data: 'usuario='+usuario[0]+'&password='+usuario[1],
-                success: function (datos) {
-                    console.log(datos);
-                    if(datos.msj == true){  // Si se guardo correctamente
-                        console.log("El registro fue exitoso");
-                        window.location.replace("principal.html");
+            }).done(function(respuesta){
+                if (respuesta.success==true) {
+                    console.log("ok");
+                    materialize.toast("El registro fue exitoso", 4000)
+                    window.location.replace("principal.html");
 
-                    }else {
-                        console.log("El email ya existe");
-                        alert("El email ya existe");
-                        }
-                    }
-                });
+                }else{
+                    console.log(respuesta);
+                    materialize.toast(respuesta.message, 4000)
 
-        } else { // Si es vacio, notifica que ingresa datos validos
-            
-        }
-        
+                }
+
+
+            });
+                
+     }   
 
     });
 
