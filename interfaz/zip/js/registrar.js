@@ -27,14 +27,15 @@ $(document).ready(function(){
                 data: 'usuario='+usuario[0]+'&password='+usuario[1],
                 success: function (datos) {
                     console.log(datos);
-                    window.location.replace("index.html");
-                    if(datos.msj == true){  // Si se guardo correctamente
+                    // window.location.replace("index.html");
+                    if(datos.success == true){  // Si se guardo correctamente
                         console.log("El registro fue exitoso");
                         window.location.replace("index.html");
+                        alert("El email se registro");
 
                     }else {
-                        //console.log("El email ya existe");
-                        //alert("El email ya existe");
+                        console.log("El email ya existe");
+                        alert("El email ya existe");
                         }
                     }
                 });
