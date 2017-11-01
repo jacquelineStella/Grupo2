@@ -1,7 +1,7 @@
 // Variables Globales
 var url_webservice = "http://www.sucursal24.com/emanuel/api"; 
 
-//var url_webservice = "http://localhost/web_service_basico";
+//var url_webservice = "http://localhost/grupo2/apirest";
 var recurso = "/cuenta/iniciar";
 
 
@@ -9,12 +9,12 @@ var recurso = "/cuenta/iniciar";
 // Se ejecuta solo si carga el documento
 $(document).ready(function(){
 
-    /* REGISTRO:
+    /* INICIAR:
        --------
         1. Lee los inputs y valida.
-        2. Genera el JSON (por desarrollar cuando este modificado el webservice)
-        3. Envia los datos
-        4. Confirma registro al usario
+        2. Envia los datos.
+        3. Recibe JSON con los datos
+        4. if respuesta.success = true, redirige a la pagina principal
     */
     $("#iniciar").click(function(){
         var usuario = validar_datos_inicio();
@@ -28,13 +28,13 @@ $(document).ready(function(){
                 data: 'usuario='+usuario[0]+'&password='+usuario[1],
             }).done(function(respuesta){
                 if (respuesta.success==true) {
-                    console.log("ok");
-                    materialize.toast("El registro fue exitoso", 4000)
+                    //console.log(respuesta);
+                    Materialize.toast("Logueo correcto", 4000)
                     window.location.replace("principal.html");
 
                 }else{
-                    console.log(respuesta);
-                    materialize.toast(respuesta.message, 4000)
+                    //console.log(respuesta);
+                    Materialize.toast(respuesta.message, 4000)
 
                 }
 
@@ -83,14 +83,9 @@ $(document).ready(function(){
             EliminarClaseError("text2");
             text2.innerHTML="";
         }
-         window.location.replace("principal.html");
 
 
-
-
-
-
-        // Crear una array con los datos formato: {'nombre', 'apellido', 'email', 'telefono', 'password'}
+        // Crear una array con los datos formato: {'email', 'password'}
         var datos = new Array(email, password);
 
 

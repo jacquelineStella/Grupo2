@@ -12,9 +12,9 @@ $(document).ready(function(){
     /* REGISTRO:
        --------
         1. Lee los inputs y valida.
-        2. Genera el JSON (por desarrollar cuando este modificado el webservice)
-        3. Envia los datos
-        4. Confirma registro al usario
+        2. Envia los datos.
+        3. Recibe JSON con la confirmacion re registro
+        4. Si datos.success = true : redirige a la pagina de inicio
     */
     $("#enviar").click(function(){
         var usuario = validar_datos_registro();
@@ -29,15 +29,15 @@ $(document).ready(function(){
                     console.log(datos);
                     // window.location.replace("index.html");
                     if(datos.success == true){  // Si se guardo correctamente
-                        console.log("El registro fue exitoso");
-                        materialize.toast("El registro fue exitoso", 4000);
+                        //console.log("El registro fue exitoso");
+                        Materialize.toast("El registro fue exitoso", 4000);
                         window.location.replace("index.html");
                         
 
                     }else {
                         var email = $("#email_registro").val();                        
-                        console.log("El email ya existe");
-                        materialize.toast(datos.message, 4000);
+                        //console.log("El email ya existe");
+                        Materialize.toast(datos.message, 4000);
                         
                         }
                     }
@@ -106,15 +106,7 @@ $(document).ready(function(){
         }
 
         
-
-
-
-
-
-
-
-
-        // Crear una array con los datos formato: {'nombre', 'apellido', 'email', 'telefono', 'password'}
+        // Crear una array con los datos formato: {'email', 'password'}
         var datos = new Array(email, password);
 
 
